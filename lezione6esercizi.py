@@ -31,7 +31,19 @@ class CSVFile():
         if type(end) == float:
             end = int(end)
         if not isinstance(end,int):
-                raise Exception('"{}" non è un intero ma di tipo "{}"'.format(end, type(end)))    
+                raise Exception('"{}" non è un intero ma di tipo "{}"'.format(end, type(end)))   
+
+        #se inserisco numeri negativi
+        #if (start<0 or end<0):
+            #start = abs(start)
+            #end = abs(end) 
+        #if (start<0 and end<0):
+            #start = abs(start)
+            #end = abs(end) 
+
+        #se end<start
+        if end<start:
+            print('Forse hai inserito i dati al contrario, meglio se inverti')
 
         file_csv = open('sales.txt', 'r')
         count=0
@@ -50,10 +62,7 @@ class CSVFile():
                 if(elemento[0] != 'Date'):
                     all_data.append(elemento)
             count = count+1
-
-            
-               
-
+    
    
         file_csv.close()
         return all_data
@@ -62,4 +71,4 @@ class CSVFile():
 myfile = CSVFile('sales.csv')
 print(myfile)
 print(myfile.name)
-print(myfile.get_data(5.3,5849930), sep = '\n')
+print(myfile.get_data(5.9,5.1), sep = '\n')
