@@ -71,4 +71,4 @@ class CSVFile():
 myfile = CSVFile('sales.csv')
 print(myfile)
 print(myfile.name)
-print(myfile.get_data(5.9,5.1), sep = '\n')
+print(myfile.get_data(0, 100), sep = '\n')

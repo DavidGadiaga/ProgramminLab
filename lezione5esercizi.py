@@ -4,9 +4,6 @@ class CSVFile:
     def __init__(self, name):
         #attributo name
         self.name = name
-    
-    #metodo restituisce una lista di liste conteneti i dati(sono stringhe)
-    def get_data(self):
         try:
 
             my_file = open(self.name, 'r')
@@ -14,6 +11,9 @@ class CSVFile:
         except Exception as e:
             print('Non esiste il file!')
             print('Ho avuto un errore generico: {}".'.format(e))
+    
+    #metodo restituisce una lista di liste conteneti i dati(sono stringhe)
+    def get_data(self):
 
         #lista che conterrà i dati
         all_data = []
