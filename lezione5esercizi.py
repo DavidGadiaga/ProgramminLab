@@ -34,7 +34,7 @@ class CSVFile:
 
 
 myfile = CSVFile('sales.csv')
-print(myfile)
+#print(myfile)
 print(myfile.name)
 print(*myfile.get_data(), sep = '\n')
 
@@ -51,14 +51,14 @@ class NumericalCSVFile(CSVFile):
         #due cicli for uno per la lista e uno elementi della lista
         values = []
         for my_list in all_data:
-            for item in my_list:
+            #for item in my_list:
                 #converto gli item in flaot da aggiungere alla lista
-                try:
-                    item = float(item)
-                    values.append(item)
-                except:
-                    print('non posso convertire il valore e ho questo errore: "{}".'.format(item))  
-        return values
+               # try:
+                    #item = float(item)
+                   # values.append(item)
+                #except:
+                    #print('non posso convertire il valore e ho questo errore: "{}".'.format(item))  
+            return values
         
 my_file = NumericalCSVFile('sales.csv')
 print('Dati: {}'.format(my_file.get_data()))
